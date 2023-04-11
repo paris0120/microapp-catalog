@@ -1,0 +1,33 @@
+{
+  "catalogApp": {
+    "catalogCatalog": {
+      "home": {
+        "title": "Catalogs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Catalog",
+        "createOrEditLabel": "Create or edit a Catalog",
+        "notFound": "No Catalogs found"
+      },
+      "created": "A new Catalog is created with identifier {{ param }}",
+      "updated": "A Catalog is updated with identifier {{ param }}",
+      "deleted": "A Catalog is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Catalog {{ id }}?"
+      },
+      "detail": {
+        "title": "Catalog"
+      },
+      "id": "ID",
+      "name": "Name",
+      "hover": "Hover",
+      "description": "Description",
+      "color": "Color",
+      "link": "Link",
+      "icon": "Icon",
+      "weight": "Weight",
+      "groupUuid": "Group Uuid",
+      "isActive": "Is Active",
+      "type": "Type"
+    }
+  }
+}
