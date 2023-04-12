@@ -12,7 +12,7 @@ import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { ICatalog } from 'app/shared/model/catalog/catalog.model';
 import {getEntities, getGroupList, getGroupTypeList} from './catalog.reducer';
 import {Form, Select} from "antd";
-import CatalogList from "app/entities/catalog/catalog/catalog-list";
+import CatalogEdit from "app/entities/catalog/catalog/catalog-edit";
 
 export const Catalog = () => {
   const dispatch = useAppDispatch();
@@ -106,8 +106,18 @@ export const Catalog = () => {
         <Translate contentKey="catalogApp.catalogCatalog.home.title">Catalogs</Translate>
 
       </h2>
-        <div className="d-flex justify-content-end">
+        <div className="d-flex justify-content-between">
+          <Form
+            name="basic"
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}
+            style={{ maxWidth: 600 }}
+            initialValues={{ remember: true }}
+            autoComplete="off"
+          >
+
           <Form.Item label='Group'>
+
           <Select title='group'
             defaultValue="Select a group"
             style={{ width: 500 }}
@@ -117,20 +127,17 @@ export const Catalog = () => {
           </Form.Item>
           {groupUuid?<Form.Item label="Type">
             <Select title='type'
-                    defaultValue="Select a group"
-                    style={{ width: 500 }}
-                    onSelect={(value) => {setType(value)}}
-                    options={types}
+                defaultValue="Select a group"
+                style={{ width: 500 }}
+                onSelect={(value) => {setType(value)}}
+                options={types}
             />
-
-
           </Form.Item>
-
-
             :<></>}
+          </Form>
         </div>
 
-      {type?<CatalogList type={type} groupUuid={groupUuid}/>:<></>}
+      {type?<CatalogEdit type={type} groupUuid={groupUuid}/>:<></>}
 
     </div>
   );
